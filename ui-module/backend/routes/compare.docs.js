@@ -49,6 +49,7 @@ router.route('/').post((req, res) => {
             synonymsMap[i].push(i);
         }
         console.log("Done syn");
+        console.log(synonymsMap);
         return synonymsMap
     }
 
@@ -122,18 +123,17 @@ router.route('/').post((req, res) => {
         return palSentence;
     }
 
-    const finalFunc = async (tokenize_text1, tokenize_text2) => {
-        var lst = await compare(tokenize_text1, tokenize_text2);
+    // const finalFunc = async (tokenize_text1, tokenize_text2) => {
+    //     var lst = await compare(tokenize_text1, tokenize_text2);
         
-    }
+    // }
 
 
-    // tokenize_text1 = tokenizer.tokenize('The angry bear chased the frightened little squirrel. hbhj. bj.');
-    // tokenize_text2 = tokenizer.tokenize('The furious bear chased the scared small squirrel. This is a step of testing process.');
+    
     tokenize_text1 = tokenizer.tokenize(req.body.text1);
     tokenize_text2 = tokenizer.tokenize(req.body.text2);
-    console.log(tokenize_text1);
-    console.log(tokenize_text2);
+    // console.log(tokenize_text1);
+    // console.log(tokenize_text2);
     compare(tokenize_text1, tokenize_text2,res);
     // const text = req.body.text1;
     // console.log(text);
